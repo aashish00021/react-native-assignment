@@ -24,12 +24,17 @@ https://github.com/user-attachments/assets/31c2c3a0-3f72-4601-8fd6-8d4f2fab1896
 
 ### **how to submit:**
 
-- submit a **pull request (pr)** to this repository from your forked repo.  
-- include the following in your pr:  
-  - a **screen recording** demonstrating your implementation, particularly the transition animation.  
-  - an **expo go link** for your project *(refer to the [expo sharing guide](https://docs.expo.dev/develop/development-builds/share-with-your-team/)).*
+1. fork the repository and ensure that its visibility is set to "private". then, add "glitchhouse" as a collaborator.
+2. share the repository link in the Intershala chat or alternatively, you can send the details to hello@glitch.house.
+3. when submitting, include the following along with the repository link:
+   - a **screen recording** demonstrating your implementation, with a particular focus on the transition animation.
+   - an **expo Go link** for your project (refer to the [expo sharing guide](https://docs.expo.dev/develop/development-builds/share-with-your-team/)).
 
 ---
+
+### deadline
+
+we expect you to complete the project within 4 days from the date of your application submission. if the assignment is not submitted by the deadline, we will consider it rejected. if you encounter any issues or need an extension, please feel free to reach out to the contact below.
 
 ### **contact:**
 

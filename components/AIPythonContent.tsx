@@ -2,6 +2,7 @@ import { StyleSheet, View, Image, ScrollView } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import Animated from 'react-native-reanimated';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
+import { SharedElement } from 'react-navigation-shared-element';
 
 const TOOLS = [
   { name: 'PYTHON', icon: require('@/assets/images/python.png') },
@@ -16,11 +17,12 @@ export function AIPythonContent() {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.content}>
         <View style={styles.ImageContainer}>
-          <Animated.Image 
-            source={require('@/assets/images/ai.gif')}
-            style={styles.mainImage}
-            sharedTransitionTag="cardImage"
-          />
+          <SharedElement id={`item.2.image`}>
+            <Image 
+              source={require('@/assets/images/ai.gif')}
+              style={styles.mainImage}
+            />
+          </SharedElement>
           <Image 
             source={require('@/assets/images/level1.png')}
             style={styles.levelBadge}
@@ -30,13 +32,11 @@ export function AIPythonContent() {
         <View style={styles.textContent}>
           <Animated.Text 
             style={styles.title}
-            sharedTransitionTag="cardTitle"
           >
             intro to coding with ai python 🤖
           </Animated.Text>
           <Animated.Text 
             style={styles.description}
-            sharedTransitionTag="cardDescription"
           >
             learn Python basics and dive into AI. Build practical ai apps, get hands-on with ml models and grow into ai engineering!
           </Animated.Text>
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   },
   mainImage: {
     width: '100%',
-    height: '100%',
+    height: 250,
     resizeMode: 'cover',
   },
   levelBadge: {

@@ -2,6 +2,7 @@ import { StyleSheet, View, Image, ScrollView } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import Animated from 'react-native-reanimated';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
+import { SharedElement } from 'react-navigation-shared-element';
 
 const TOOLS = [
   { name: 'HTML', icon: require('@/assets/images/html.png') },
@@ -18,27 +19,25 @@ export function WebDevContent() {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.content}>
         <View style={styles.ImageContainer}>
-          <Animated.Image 
+        <SharedElement id={`item.1.image`}>
+          <Image 
             source={require('@/assets/images/webDev.gif')}
             style={styles.mainImage}
-            sharedTransitionTag="cardImage"
           />
-          <Image 
-            source={require('@/assets/images/level1.png')}
-            style={styles.levelBadge}
+        </SharedElement>
+        <Image 
+          source={require('@/assets/images/level1.png')}
+          style={styles.levelBadge}
           />
         </View>
-
         <View style={styles.textContent}>
           <Animated.Text 
             style={styles.title}
-            sharedTransitionTag="cardTitle"
           >
             intro to coding with web dev 🌐
           </Animated.Text>
           <Animated.Text 
             style={styles.description}
-            sharedTransitionTag="cardDescription"
           >
             start building websites with html & css, the building blocks that power the web. grow into full-stack coding!
           </Animated.Text>
@@ -91,6 +90,13 @@ export function WebDevContent() {
   );
 }
 
+WebDevContent.sharedElements = (route: { params: { item: any; }; }, otherRoute: any, showing: any) => {
+  // const { item } = route.params;
+  // return [`item.${item.id}.photo`];
+  return ['item.1.image'];
+}
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -107,7 +113,7 @@ const styles = StyleSheet.create({
   },
   mainImage: {
     width: '100%',
-    height: '100%',
+    height: 250,
     resizeMode: 'cover',
   },
   levelBadge: {
